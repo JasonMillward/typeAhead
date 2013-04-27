@@ -9,7 +9,6 @@ $("#brands").typeahead({
     },
     updater:function (item) {
 		var isUnique = true;
-
 		$('#myTable').find('tbody').find('tr').each(function() {
 			var text = $(this).find('td').text().replace('×','');
 
@@ -17,8 +16,7 @@ $("#brands").typeahead({
 				isUnique = false;
 			}
 		});
-
-		if (isUnique) {
+		if  (isUnique) {
 			$('#myTable').find('tbody').append(
 				$('<tr>').append(
 					$('<td>').text(item)
@@ -35,13 +33,10 @@ $("#brands").typeahead({
 $('#submitButton').click(function() {
 	$('#output').show();
 	$('#list').empty();
-
 	$('#myTable').find('tbody').find('tr').each(function() {
 		var text = $(this).find('td').text().replace('×','');
 		$('#list').append(text).append("<br/>");
-
 	});
-
 	$('#myTable').find('tbody').empty();
 });
 
